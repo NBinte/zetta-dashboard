@@ -32,7 +32,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           </motion.aside>
 
           {/* Main content flexes to fill; min-w-0 prevents overflow pushing layout */}
-          <main className="min-w-0 flex-1" role="main">
+          <main id="main" className="min-w-0 flex-1" role="main">
             {children}
           </main>
         </div>

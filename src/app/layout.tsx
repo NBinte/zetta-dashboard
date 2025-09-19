@@ -33,6 +33,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
+import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
   title: "Zetta Dashboard",
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <SkipLink />
         <AppShell>{children}</AppShell>
       </body>
     </html>
