@@ -73,8 +73,9 @@ body {
 }
 
 /* optional nudge */
-:root { --color-muted: #a9b9d6; } /* slightly brighter than #9fb0cf */
-
+:root {
+  --color-muted: #a9b9d6;
+} /* slightly brighter than #9fb0cf */
 
 html,
 body {
@@ -126,10 +127,12 @@ body {
   }
 }
 
-.section > .ui-h1 { margin-bottom: .5rem; }
-.section > .ui-muted { margin-top: 0; }
-
-
+.section > .ui-h1 {
+  margin-bottom: 0.5rem;
+}
+.section > .ui-muted {
+  margin-top: 0;
+}
 
 /* ---------- Opt-in UI primitives (prefixed, won’t clash) ---------- */
 
@@ -142,7 +145,10 @@ body {
   padding: 1.25rem;
 }
 .ui-card-hover {
-  transition: transform 200ms, box-shadow 200ms, background-color 200ms
+  transition:
+    transform 200ms,
+    box-shadow 200ms,
+    background-color 200ms;
 }
 .ui-card-hover:hover {
   transform: translateY(-2px);
@@ -210,8 +216,11 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.ui-btn, .ui-btn-ghost { min-height: 2.5rem; padding-inline: 1rem; }
-
+.ui-btn,
+.ui-btn-ghost {
+  min-height: 2.5rem;
+  padding-inline: 1rem;
+}
 
 /* Input */
 .ui-input {
@@ -251,8 +260,9 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.soft-divider { border-bottom: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent); }
-
+.soft-divider {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+}
 
 /* Badge */
 .ui-badge {

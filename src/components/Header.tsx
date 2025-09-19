@@ -16,7 +16,6 @@ export default function Header({ open, onToggle }: Props) {
           <span className="inline-block h-2 w-2 rounded-full bg-[--color-accent]" />
           Zetta<span className="text-[--color-muted]">Dashboard</span>
         </Link>
-
         {/* Nav */}
         <nav className="hidden items-center gap-6 sm:flex">
           <Link className="ui-btn-ghost focus-visible:focus-ring" href="/posts">
@@ -26,7 +25,6 @@ export default function Header({ open, onToggle }: Props) {
             Users
           </Link>
         </nav>
-
         {/* Sidebar toggle (mobile + desktop) */}
         <button
           aria-label={open ? "Collapse sidebar" : "Expand sidebar"}
@@ -35,6 +33,10 @@ export default function Header({ open, onToggle }: Props) {
         >
           {open ? "Hide Menu" : "Show Menu"}
         </button>
+        {/* // inside your Header nav */}
+        <Link className="ui-btn-ghost focus-visible:focus-ring" href="/profile">
+          Profile
+        </Link>
       </div>
     </header>
   );
