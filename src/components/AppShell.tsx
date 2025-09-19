@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
@@ -12,27 +12,27 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh text-[--color-text]">
       <Header open={open} onToggle={() => setOpen((o) => !o)} />
 
-      <div className="container-p">
-        <div className="grid grid-cols-12 gap-6 py-6">
-          {/* Sidebar */}
-          <AnimatePresence initial={false}>
-            {open && (
-              <motion.aside
-                key="sidebar"
-                initial={{ width: 0, opacity: 0 }}
-                animate={{ width: 260, opacity: 1 }}
-                exit={{ width: 0, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="col-span-12 overflow-hidden sm:col-span-4 lg:col-span-3"
-                aria-label="Sidebar"
-              >
-                <Sidebar onNavigate={() => setOpen(false)} />
-              </motion.aside>
-            )}
-          </AnimatePresence>
+      <div className="container-p py-6">
+        {/* Use FLEX, not grid → no reflow when width animates */}
+        <div className="flex gap-6">
+          {/* Sidebar stays mounted; width animates between 0 and 260 */}
+          <motion.aside
+            aria-label="Sidebar"
+            aria-hidden={!open}
+            initial={false}
+            animate={{ width: open ? 260 : 0, opacity: open ? 1 : 0.0001 }}
+            transition={{ type: "spring", stiffness: 320, damping: 32 }}
+            className="overflow-hidden"
+            style={{ willChange: "width" }}
+          >
+            {/* Add padding inside so content doesn’t clip when narrow */}
+            <div className="w-[260px]">
+              <Sidebar onNavigate={() => setOpen(false)} />
+            </div>
+          </motion.aside>
 
-          {/* Main */}
-          <main className={`col-span-12 ${open ? "sm:col-span-8 lg:col-span-9" : ""}`} role="main">
+          {/* Main content flexes to fill; min-w-0 prevents overflow pushing layout */}
+          <main className="min-w-0 flex-1" role="main">
             {children}
           </main>
         </div>
