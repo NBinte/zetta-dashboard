@@ -19,7 +19,7 @@ export default function PostCard({ id, title, body, delay = 0 }: Props) {
       className="ui-card ui-card-hover flex h-full flex-col"
     >
       <h3 className="mb-1 text-lg font-semibold">{title}</h3>
-      <p className="ui-subtle line-clamp-3 flex-1">{body}</p>
+      <p className="ui-muted line-clamp-3 flex-1 leading-relaxed">{body}</p>
 
       <div className="mt-4">
         <Link href={`/posts/${id}`} className="ui-btn-ghost focus-visible:focus-ring">

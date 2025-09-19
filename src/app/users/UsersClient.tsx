@@ -59,7 +59,7 @@ export default function UsersClient() {
         <div className="ui-card overflow-clip rounded-[--radius-xl]">
           <table className="ui-table min-w-[720px]">
             <thead>
-              <tr>
+              <tr className="soft-divider hover:bg-[rgba(255,255,255,0.02)]">
                 <th>Name</th>
                 <th className="hidden sm:table-cell">Email</th>
                 <th className="hidden sm:table-cell">Company</th>

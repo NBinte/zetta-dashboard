@@ -72,6 +72,10 @@ body {
   color-scheme: dark;
 }
 
+/* optional nudge */
+:root { --color-muted: #a9b9d6; } /* slightly brighter than #9fb0cf */
+
+
 html,
 body {
   min-height: 100%;
@@ -121,6 +125,11 @@ body {
     padding-block: 2rem;
   }
 }
+
+.section > .ui-h1 { margin-bottom: .5rem; }
+.section > .ui-muted { margin-top: 0; }
+
+
 
 /* ---------- Opt-in UI primitives (prefixed, won’t clash) ---------- */
 
@@ -201,6 +210,9 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.ui-btn, .ui-btn-ghost { min-height: 2.5rem; padding-inline: 1rem; }
+
+
 /* Input */
 .ui-input {
   width: 100%;
@@ -238,6 +250,9 @@ body {
 .ui-table tbody tr:hover {
   background: rgba(255, 255, 255, 0.02);
 }
+
+.soft-divider { border-bottom: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent); }
+
 
 /* Badge */
 .ui-badge {
