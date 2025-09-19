@@ -25,10 +25,49 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 import */
+@import "tailwindcss";
 
+/* ---------- Design Tokens (safe, non-breaking) ---------- */
+@theme {
+  /* Brand & text */
+  --color-bg: #0e1628; /* matches your current background tone */
+  --color-surface: #161e31; /* card bg */
+  --color-surface-2: #1d2740; /* raised/hover */
+  --color-accent: #17b6a5; /* teal accent */
+  --color-accent-600: #109e90; /* hover teal */
+  --color-accent-700: #0b8378; /* active teal */
+  --color-text: #eaf2ff; /* primary text */
+  --color-muted: #9fb0cf; /* secondary text */
+  --color-subtle: #6e7ea0; /* tertiary text */
+  --color-line: #223055; /* hairline */
+
+  /* Feedback */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Elevation & shape */
+  --shadow-card: 0 8px 30px rgba(2, 6, 23, 0.35);
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+
+  /* Type scale */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Noto Sans",
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+}
+
+/* ---------- Your existing base (kept) ---------- */
 :root {
   color-scheme: dark;
 }
@@ -36,6 +75,10 @@ body {
 html,
 body {
   min-height: 100%;
+}
+
+/* Your gradient background preserved 1:1 */
+body {
   /* Slightly lighter base + stronger halos */
   background-color: #0e1628;
   background-image:
@@ -44,19 +87,185 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-blend-mode: screen;
+
+  /* subtle text smoothing without overriding your palette */
+  color: var(--color-text);
+  font-family: var(--font-sans);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-small {
-  margin: 0;
-  padding: 0;
+/* ---------- Helpers ---------- */
+
+/* container padding helper */
+.container-p {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .container-p {
+    padding-inline: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-p {
+    padding-inline: 2rem;
+  }
+}
+
+/* section spacing */
+.section {
+  padding-block: 1.5rem;
+}
+@media (min-width: 640px) {
+  .section {
+    padding-block: 2rem;
+  }
+}
+
+/* ---------- Opt-in UI primitives (prefixed, won’t clash) ---------- */
+
+/* Card */
+.ui-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem;
+}
+.ui-card-hover {
+  transition: transform 200ms;
+}
+.ui-card-hover:hover {
+  transform: translateY(-2px);
+  background: var(--color-surface-2);
+}
+
+/* Headings */
+.ui-h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+.ui-h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+.ui-h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+/* Text tones */
+.ui-muted {
+  color: var(--color-muted);
+}
+.ui-subtle {
+  color: var(--color-subtle);
+}
+
+/* Buttons */
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-600));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 150ms;
+}
+.ui-btn:hover {
+  background: linear-gradient(180deg, var(--color-accent-600), var(--color-accent-700));
+  transform: translateY(-1px);
+}
+.ui-btn:active {
+  transform: translateY(0);
+}
+
+/* Ghost button */
+.ui-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-line);
+}
+.ui-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Input */
+.ui-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  outline: none;
+}
+.ui-input::placeholder {
+  color: var(--color-subtle);
+}
+.ui-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+/* Table */
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ui-table th,
+.ui-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-line);
+}
+.ui-table thead th {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+.ui-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Badge */
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-line);
+}
+.ui-badge-accent {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+/* Optional light theme (toggle by adding class="theme-light" on <html>) */
+.theme-light {
+  --color-bg: #f6f8fc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f6ff;
+  --color-accent: #0ea5e9;
+  --color-accent-600: #0284c7;
+  --color-accent-700: #0369a1;
+  --color-text: #0b1220;
+  --color-muted: #4b5563;
+  --color-subtle: #6b7280;
+  --color-line: #e5e7eb;
+  --shadow-card: 0 10px 30px rgba(2, 6, 23, 0.12);
 }
