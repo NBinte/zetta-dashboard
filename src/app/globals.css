@@ -38,17 +38,25 @@ body {
   min-height: 100%;
   /* Slightly lighter base + stronger halos */
   background-color: #0e1628;
-  background-image: radial-gradient(
-      1200px 600px at 10% -10%,
-      rgba(167, 139, 250, 0.16),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 450px at 90% 10%,
-      rgba(34, 211, 166, 0.14),
-      transparent 60%
-    );
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, rgba(167, 139, 250, 0.16), transparent 60%),
+    radial-gradient(900px 450px at 90% 10%, rgba(34, 211, 166, 0.14), transparent 60%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-blend-mode: screen;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+small {
+  margin: 0;
+  padding: 0;
 }
