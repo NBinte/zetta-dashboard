@@ -1,16 +1,11 @@
-// src/app/posts/page.tsx
-export const metadata = {
+import type { Metadata } from "next";
+import PostsClient from "./PostsClient";
+
+export const metadata: Metadata = {
   title: "Posts | Zetta Dashboard",
-  description: "Browse posts from JSONPlaceholder.",
+  description: "Posts from JSONPlaceholder displayed as reusable cards.",
 };
 
 export default function PostsPage() {
-  return (
-    <main className="container-p space-y-4 py-8">
-      <h1 className="text-3xl font-bold">Posts</h1>
-      <p className="text-[--color-muted]">
-        This page will list posts. (Placeholder content for now.)
-      </p>
-    </main>
-  );
+  return <PostsClient />;
 }
