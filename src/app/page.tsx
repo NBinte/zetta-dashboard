@@ -82,6 +82,13 @@
 //   );
 // }
 
+import StatCard from "@/components/StatCard";
+
+export const metadata = {
+  title: "Dashboard | Zetta",
+  description: "Mini dashboard home",
+};
+
 export default function HomePage() {
   return (
     <div className="section space-y-6">
@@ -92,19 +99,11 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* Staggered cards (meaningful animation) */}
       <section className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="ui-card ui-card-hover">
-          <div className="text-2xl font-bold">100</div>
-          <p className="ui-muted">Total Posts</p>
-        </div>
-        <div className="ui-card ui-card-hover">
-          <div className="text-2xl font-bold">10</div>
-          <p className="ui-muted">Active Users</p>
-        </div>
-        <div className="ui-card ui-card-hover">
-          <div className="text-2xl font-bold">12</div>
-          <p className="ui-muted">Errors Resolved</p>
-        </div>
+        <StatCard value={100} label="Total Posts" delay={0.02} />
+        <StatCard value={10} label="Active Users" delay={0.08} />
+        <StatCard value={12} label="Errors Resolved" delay={0.14} />
       </section>
     </div>
   );
