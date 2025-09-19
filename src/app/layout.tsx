@@ -36,9 +36,21 @@ import AppShell from "@/components/AppShell";
 import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
-  title: "Zetta Dashboard",
-  description: "UI-focused mini dashboard with Next.js 15, Tailwind v4, Framer Motion.",
+  title: {
+    default: "Zetta Dashboard",
+    template: "%s | Zetta Dashboard",
+  },
+  description: "UI-focused mini dashboard built with Next.js 15, Tailwind v4, Framer Motion.",
+  robots: "index,follow",
+  metadataBase: new URL("https://zetta-dashboard.vercel.app"),
+  openGraph: {
+    type: "website",
+    title: "Zetta Dashboard",
+    description: "UI-focused mini dashboard",
+    url: "https://zetta-dashboard.vercel.app",
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

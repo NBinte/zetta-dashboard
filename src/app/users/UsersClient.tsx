@@ -29,10 +29,10 @@ export default function UsersClient() {
           <p className="ui-muted">Responsive table with an animated details modal.</p>
         </div>
         <div className="flex gap-3">
-          <button className="ui-btn-ghost" onClick={refetch}>
+          <button className="ui-btn-ghost focus-visible:focus-ring" onClick={refetch}>
             Refetch
           </button>
-          <button className="ui-btn" onClick={simulateError}>
+          <button className="ui-btn focus-visible:focus-ring" onClick={simulateError}>
             Simulate Error
           </button>
         </div>
@@ -47,7 +47,7 @@ export default function UsersClient() {
           <div className="mb-1 font-semibold">Failed to load users</div>
           <p className="ui-muted text-sm">{error.message || "Please try again."}</p>
           <div className="mt-3">
-            <button className="ui-btn" onClick={refetch}>
+            <button className="ui-btn focus-visible:focus-ring" onClick={refetch}>
               Retry
             </button>
           </div>
@@ -56,7 +56,7 @@ export default function UsersClient() {
 
       {/* Table */}
       {status === "success" && data && (
-        <div className="ui-card overflow-x-auto">
+        <div className="ui-card overflow-clip rounded-[--radius-xl]">
           <table className="ui-table min-w-[720px]">
             <thead>
               <tr>

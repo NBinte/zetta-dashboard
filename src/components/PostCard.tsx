@@ -22,7 +22,7 @@ export default function PostCard({ id, title, body, delay = 0 }: Props) {
       <p className="ui-subtle line-clamp-3 flex-1">{body}</p>
 
       <div className="mt-4">
-        <Link href={`/posts/${id}`} className="ui-btn-ghost">
+        <Link href={`/posts/${id}`} className="ui-btn-ghost focus-visible:focus-ring">
           View Details
         </Link>
       </div>

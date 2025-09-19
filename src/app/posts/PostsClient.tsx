@@ -17,10 +17,10 @@ export default function PostsClient() {
           <p className="ui-muted">Reusable card grid with staggered entrance.</p>
         </div>
         <div className="flex gap-3">
-          <button className="ui-btn-ghost" onClick={refetch}>
+          <button className="ui-btn-ghost focus-visible:focus-ring" onClick={refetch}>
             Refetch
           </button>
-          <button className="ui-btn" onClick={simulateError}>
+          <button className="ui-btn focus-visible:focus-ring" onClick={simulateError}>
             Simulate Error
           </button>
         </div>
@@ -39,7 +39,7 @@ export default function PostsClient() {
           <div className="mb-1 font-semibold">Failed to load posts</div>
           <p className="ui-muted text-sm">{error.message || "Please try again."}</p>
           <div className="mt-3 flex gap-3">
-            <button className="ui-btn" onClick={refetch}>
+            <button className="ui-btn focus-visible:focus-ring" onClick={refetch}>
               Retry
             </button>
           </div>

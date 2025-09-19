@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UsersClient from "./UsesClient";
+import UsersClient from "./UsersClient";
 
 export const metadata: Metadata = {
   title: "Users | Zetta Dashboard",

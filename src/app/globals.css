@@ -133,11 +133,12 @@ body {
   padding: 1.25rem;
 }
 .ui-card-hover {
-  transition: transform 200ms;
+  transition: transform 200ms, box-shadow 200ms, background-color 200ms
 }
 .ui-card-hover:hover {
   transform: translateY(-2px);
   background: var(--color-surface-2);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
 }
 
 /* Headings */
@@ -268,4 +269,17 @@ body {
   --color-subtle: #6b7280;
   --color-line: #e5e7eb;
   --shadow-card: 0 10px 30px rgba(2, 6, 23, 0.12);
+}
+
+/* Generic focus ring util you can apply anywhere */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-color: var(--color-accent);
+}
+
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-color: var(--color-accent);
 }

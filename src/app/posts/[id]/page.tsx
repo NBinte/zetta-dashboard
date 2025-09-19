@@ -24,7 +24,7 @@ export default async function PostPage({ params }: { params: Params }) {
           <h1 className="ui-h1 mb-2">Post {params.id}</h1>
           <p className="ui-muted">Failed to load this post.</p>
           <div className="mt-4">
-            <Link href="/posts" className="ui-btn-ghost">
+            <Link href="/posts" className="ui-btn-ghost focus-visible:focus-ring">
               ← Back to Posts
             </Link>
           </div>
@@ -39,7 +39,7 @@ export default async function PostPage({ params }: { params: Params }) {
     <main className="container-p space-y-6 py-8">
       <div className="flex items-center justify-between">
         <h1 className="ui-h1">Post {post.id}</h1>
-        <Link href="/posts" className="ui-btn-ghost">
+        <Link href="/posts" className="ui-btn-ghost focus-visible:focus-ring">
           ← Back
         </Link>
       </div>

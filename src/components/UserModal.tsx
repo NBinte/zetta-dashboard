@@ -44,7 +44,7 @@ export default function UserModal({ open, onClose, user }: Props) {
           >
             <div className="mb-2 flex items-center justify-between">
               <h2 className="text-xl font-semibold">{user.name}</h2>
-              <button className="ui-btn-ghost" onClick={onClose}>
+              <button className="ui-btn-ghost focus-visible:focus-ring" onClick={onClose}>
                 Close
               </button>
             </div>
