@@ -125,10 +125,10 @@ npm run format    # Prettier format
 ## Vercel
 
 - Add the same variables under Project → Settings → Environment Variables
-    - NEXTAUTH_URL=https://<your-vercel-domain>
+    - NEXTAUTH_URL=https://zetta-dashboard.vercel.app
 
 - Add authorized redirect URI in Google Cloud Console:
-    - https://<your-vercel-domain>/api/auth/callback/google
+    - https://zetta-dashboard.vercel.app/api/auth/callback/google
 
 ## Reviewer Instructions
 
