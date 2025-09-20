@@ -161,5 +161,5 @@ Sign out → back to home
 
 ## Links
 
-[Live Demo]: (https://zetta-dashboard.vercel.app>)
-[Source Code]: (https://github.com/NBinte/zetta-dashboard)
+[Live Demo:](https://zetta-dashboard.vercel.app>)
+[Source Code:](https://github.com/NBinte/zetta-dashboard)
