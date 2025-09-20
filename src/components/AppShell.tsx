@@ -13,7 +13,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <Header open={open} onToggle={() => setOpen((o) => !o)} />
 
       <div className="container-p py-6">
-        {/* Use FLEX, not grid → no reflow when width animates */}
+        {/* Using FLEX, not grid, no reflow when width animates */}
         <div className="flex gap-6">
           {/* Sidebar stays mounted; width animates between 0 and 260 */}
           <motion.aside

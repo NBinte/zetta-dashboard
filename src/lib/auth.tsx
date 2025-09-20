@@ -3,7 +3,6 @@ import type { NextAuthOptions } from "next-auth";
 import Google from "next-auth/providers/google";
 
 // Define config again here for getServerSession
-// (v5 doesn’t expose authOptions by default)
 const authConfig: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import AuthButtons from "./AuthButtons";
 
 type Props = { open: boolean; onToggle: () => void };
 
@@ -24,8 +25,12 @@ export default function Header({ open, onToggle }: Props) {
           <Link className="ui-btn-ghost focus-visible:focus-ring" href="/users">
             Users
           </Link>
+          <Link className="ui-btn-ghost focus-visible:focus-ring" href="/profile">
+            Profile
+          </Link>
         </nav>
         {/* Sidebar toggle (mobile + desktop) */}
+        <AuthButtons />
         <button
           aria-label={open ? "Collapse sidebar" : "Expand sidebar"}
           onClick={onToggle}
@@ -33,10 +38,6 @@ export default function Header({ open, onToggle }: Props) {
         >
           {open ? "Hide Menu" : "Show Menu"}
         </button>
-        {/* // inside your Header nav */}
-        <Link className="ui-btn-ghost focus-visible:focus-ring" href="/profile">
-          Profile
-        </Link>
       </div>
     </header>
   );
