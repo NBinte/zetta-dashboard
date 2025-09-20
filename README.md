@@ -123,41 +123,34 @@ GOOGLE_CLIENT_SECRET=<your_google_client_secret>
 
 ## Vercel
 
-Add the same variables under Project → Settings → Environment Variables
+- Add the same variables under Project → Settings → Environment Variables
+    - NEXTAUTH_URL=https://<your-vercel-domain>
 
-NEXTAUTH_URL=https://<your-vercel-domain>
-
-Add authorized redirect URI in Google Cloud Console:
-
-https://<your-vercel-domain>/api/auth/callback/google
+- Add authorized redirect URI in Google Cloud Console:
+    - https://<your-vercel-domain>/api/auth/callback/google
 
 ## Reviewer Instructions
 
-Posts
+**Posts**
 
-Click Simulate Error → API fails → error banner shows
+- Click Simulate Error → API fails → error banner shows
+- Click Retry → fetches successfully
 
-Click Retry → fetches successfully
+**Users**
 
-Users
+- Table adapts to screen
+- Row click → animated modal
+- Simulate error → error banner
 
-Table adapts to screen
+**Sidebar**
 
-Row click → animated modal
+- Toggle open/close → smooth animation, no content jump
 
-Simulate error → error banner
+**Profile**
 
-Sidebar
-
-Toggle open/close → smooth animation, no content jump
-
-Profile
-
-Visit /profile → redirects to sign-in
-
-Sign in with Google → profile data appears
-
-Sign out → back to home
+- Visit /profile → redirects to sign-in
+- Sign in with Google → profile data appears
+- Sign out → back to home
 
 ## Links
 
