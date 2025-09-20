@@ -117,9 +117,10 @@ npm run format    # Prettier format
 
 ## Environment Setup
 
-Local (.env.local) ini Copy code NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=<long_random_string> GOOGLE_CLIENT_ID=<your_google_client_id>
-GOOGLE_CLIENT_SECRET=<your_google_client_secret>
+- Local (.env.local) ini Copy code NEXTAUTH_URL=http://localhost:3000
+- NEXTAUTH_SECRET=<long_random_string>  
+- GOOGLE_CLIENT_ID=<your_google_client_id>
+- GOOGLE_CLIENT_SECRET=<your_google_client_secret>
 
 ## Vercel
 
